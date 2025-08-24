@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: #4b4640;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  display: flex;
+  justify-content: center
+}
+
+.App-logo {
+  height: 125px;
+}
+
+.App-mainBody {
+  display: flex;
+}

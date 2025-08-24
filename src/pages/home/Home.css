@@ -1,0 +1,54 @@
+.Home {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Home-header {
+  background-color: #4b4640;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.Home-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  gap: 16px;
+  height: 100%;
+}
+
+.Home-galleryMain {
+  height: 100vh;
+}
+
+.Home-searchBar{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Home-link {
+  color: #61dafb;
+}
+
+.Home-noneParagraph{
+  text-align: center;
+}

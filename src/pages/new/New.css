@@ -1,11 +1,11 @@
-.App {
+.New {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
+.New-header {
+  background-color: #4b4640;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,28 +15,50 @@
   padding: 0px 20px;
 }
 
-.App-gallery {
+.New-gallery {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  padding: 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.App-main {
+.New-main {
   background-color: white;
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding: 20px;
+  gap: 16px;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.New-galleryMain {
+  height: 100vh;
 }
 
-.App-noneParagraph{
-  text-align: center;
+.New-searchBar{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.New-body{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px
+}
+
+.New-buttons{
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.New-buttons button {
+  flex: 1;   /* makes each button take equal available space */
 }
