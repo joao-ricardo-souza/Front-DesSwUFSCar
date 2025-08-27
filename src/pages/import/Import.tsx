@@ -1,7 +1,7 @@
 import "./Import.css";
 import { useNavigate } from "react-router";
 import { Button } from "../../components/button/Button";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ImportCard from "../../components/importCard/ImportCard";
 import Papa from "papaparse";
 import axios from 'axios'
@@ -25,7 +25,6 @@ function Import() {
                 category: product.category,
                 pictureUrl: product.pictureUrl
                 });
-                console.log("Produto criado com sucesso:", response.data);
             })
             );
 
@@ -50,19 +49,15 @@ function Import() {
         reader.onload = (event) => {
             const text = event.target?.result;
             if (typeof text === "string") {
-                const parsed = Papa.parse<string[]>(text, {
+                const parsed = Papa.parse<ImportProduct>(text, {
                     header: true,
                     skipEmptyLines: true,
-                    delimiter: ";"
+                    delimiter: ","
                 });
-
-                const products: ImportProduct[] = parsed.data.map((row) => ({
-                    selected: true,
-                    name: row[0],
-                    description: row[1],
-                    price: parseFloat(row[2]),
-                    category: row[3],
-                    pictureUrl: row[4]
+                
+                const products: ImportProduct[] = parsed.data.map(p => ({
+                    ...p,
+                    selected: true
                 }));
 
                 setImportData(products);

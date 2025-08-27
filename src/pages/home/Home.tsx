@@ -55,19 +55,17 @@ function Home() {
             </div>
             <div className= "Home-galleryMain">
                 {filteredData.length > 0 ? (
-                    <div>
-                        <div className="Home-gallery">
-                            {filteredData.map((item) => (
-                            <Card 
-                                id={item.id}
-                                name={item.name}
-                                description={item.description}
-                                price={item.price}
-                                category={item.category}
-                                pictureUrl={item.pictureUrl}
-                            />
-                            ))}
-                        </div>
+                    <div className="Home-gallery">
+                        {filteredData.map((item) => (
+                        <Card 
+                            id={item.id}
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                            category={item.category}
+                            pictureUrl={item.pictureUrl}
+                        />
+                        ))}
                     </div>
                 ) : (
                 <p className="Home-noneParagraph">Nenhum produto encontrado.</p>

@@ -58,12 +58,13 @@ const Card: React.FC<Product> = ({ id, name, description, price, category, pictu
       const confirmed = window.confirm("Tem certeza que deseja deletar este produto?");
       if (!confirmed) return;
 
+          console.log("Produto a deletar:", id);
+
       try {
           const response = await axios.delete(`${API_URL}/${id}`);
-          console.log("Produto criado com sucesso:", response.data);
           navigate("/");
       } catch (error: any) {
-          console.error("Falha ao criar produto:", error.response?.data || error.message);
+          console.error("Falha ao deletar produto:", error.response?.data || error.message);
       }
   };
 

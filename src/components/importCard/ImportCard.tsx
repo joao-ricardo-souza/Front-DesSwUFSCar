@@ -18,7 +18,7 @@ const ImportCard: React.FC<ImportProduct> = ({selected, name, price, category, p
             <div className="Import-buttonDiv">
                 <input
                     type="checkbox"
-                    defaultChecked={selected}
+                    checked={selected}
                     onChange={onToggle}
                 />
                 <label className="buttonText">Importar</label>

@@ -66,12 +66,10 @@
 }
 
 .Import-buttonDiv {
-    display: flex; 
-    justify-content: flex-end;
-    gap: 1rem; 
     height: 3rem;
-    float:right;
-    background-color: rgb(223, 207, 168);
-    border: 2px solid rgb(139, 106, 20);
+    background-color: rgb(187, 187, 187);
+    border: 2px solid rgb(63, 63, 63);
     border-radius: .5rem;
+    width: 100px;
+    align-self:flex-end;
 }
