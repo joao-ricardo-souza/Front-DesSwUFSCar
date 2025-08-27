@@ -10,7 +10,7 @@ function New() {
 
     const handleCancel = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        navigate("/products");
+        navigate("/");
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +34,7 @@ function New() {
         try {
             const response = await axios.post(API_URL, newProduct);
             console.log("Produto criado com sucesso:", response.data);
-            navigate("/products");
+            navigate("/");
         } catch (error: any) {
             console.error("Falha ao criar produto:", error.response?.data || error.message);
         }
@@ -43,7 +43,7 @@ function New() {
     return (
         <div className="New-main">
             <Form 
-                action="/products"
+                action="/"
                 method="post"
                 id="NewProductForm"
                 onSubmit={handleSubmit}

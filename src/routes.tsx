@@ -2,10 +2,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './pages/app/App';
 import Home from './pages/home/Home';
 import New from './pages/new/New';
-import Edit from './pages/edit/Edit';
 import Import from './pages/import/Import';
 
-import { homeLoader, editLoader } from './loaders'
+import { homeLoader } from './loaders'
 
 const router = createBrowserRouter([
   {
@@ -13,7 +12,6 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: 'products',
         index: true,
         loader: homeLoader ,
         element: <Home />,
@@ -23,12 +21,7 @@ const router = createBrowserRouter([
         element: <New/>
       },
       {
-        path: 'products/edit',
-        loader: editLoader,
-        element: <Edit/>
-      },
-      {
-        path: 'products/import',
+        path: 'import',
         element: <Import/>
       }
     ],

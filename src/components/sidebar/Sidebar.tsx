@@ -9,9 +9,9 @@ export function Sidebar() {
 
   return (
     <aside className="Sidebar">
-      <Button onClick={() => handleClickOption('/products')}>Produtos</Button>
+      <Button onClick={() => handleClickOption('/')}>Produtos</Button>
       <Button onClick={() => handleClickOption('/new-product')}>Novo Produto</Button>
-      <Button onClick={() => handleClickOption('/products/import')}>Importar CSV</Button>
+      <Button onClick={() => handleClickOption('/import')}>Importar CSV</Button>
     </aside>
   );
 }

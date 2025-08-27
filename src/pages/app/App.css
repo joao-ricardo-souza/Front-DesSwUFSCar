@@ -18,4 +18,6 @@
 
 .App-mainBody {
   display: flex;
+  align-items: stretch;
+  min-height: 100vh;
 }

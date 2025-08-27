@@ -46,7 +46,7 @@ const Card: React.FC<Product> = ({ id, name, description, price, category, pictu
       const response = await axios.put(`${API_URL}/${id}`, updatedProduct);
       console.log("Produto atualizado com sucesso:", response.data);
       setIsEditing(false);
-      navigate("/products");
+      navigate("/");
     } catch (error: any) {
       console.error("Erro ao atualizar produto:", error.response?.data || error.message);
     }
@@ -61,7 +61,7 @@ const Card: React.FC<Product> = ({ id, name, description, price, category, pictu
       try {
           const response = await axios.delete(`${API_URL}/${id}`);
           console.log("Produto criado com sucesso:", response.data);
-          navigate("/products");
+          navigate("/");
       } catch (error: any) {
           console.error("Falha ao criar produto:", error.response?.data || error.message);
       }
@@ -75,26 +75,22 @@ const Card: React.FC<Product> = ({ id, name, description, price, category, pictu
           {isEditing ? (
             <>
               <input
-                className="inputText"
+                className="title"
                 value={editedName}
-                onChange={(e) => setEditedName(e.target.value)}
-              />
+                onChange={(e) => setEditedName(e.target.value)}/>
               <input
-                className="inputText"
+                className="text"
+                value={editedCategory}
+                onChange={(e) => setEditedCategory(e.target.value)}/>
+              <input
+                className="text"
                 type="number"
                 value={editedPrice}
-                onChange={(e) => setEditedPrice(parseFloat(e.target.value))}
-              />
-              <input
-                className="inputText"
-                value={editedCategory}
-                onChange={(e) => setEditedCategory(e.target.value)}
-              />
+                onChange={(e) => setEditedPrice(parseFloat(e.target.value))}/>
               <textarea
-                className="inputText"
+                className="text"
                 value={editedDescription}
-                onChange={(e) => setEditedDescription(e.target.value)}
-              />
+                onChange={(e) => setEditedDescription(e.target.value)}/>
             </>
           ) : (
             <>
@@ -112,10 +108,10 @@ const Card: React.FC<Product> = ({ id, name, description, price, category, pictu
               <button className="deleteButton" onClick={handleCancelClick}>Cancelar</button>
             </>
           ) : (
-            <div>
+            <>
               <button className="editButton" onClick={handleEditClick}>Editar</button>
               <button className="deleteButton" onClick={(e) => handleDelete(e, id)}>Excluir</button>
-            </div>
+            </>
           )}
         </div>
       </div>

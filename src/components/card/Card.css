@@ -58,6 +58,8 @@
 
 .textDiv {
     float:left;
+        display: flex; 
+    flex-direction: column; 
 }
 
 .buttonDiv {

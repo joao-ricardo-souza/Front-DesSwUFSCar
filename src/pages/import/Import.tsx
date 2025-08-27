@@ -29,7 +29,7 @@ function Import() {
             })
             );
 
-            navigate("/products");
+            navigate("/");
         } catch (error: any) {
             console.error(
             "Falha ao criar produto:",
